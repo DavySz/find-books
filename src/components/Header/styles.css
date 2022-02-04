@@ -1,0 +1,35 @@
+.container{
+    display: flex;
+    align-items: center;
+}
+.content{
+    display: flex;
+    width: 100%;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0 5rem;
+    padding: 12px 0 12px 0;
+}
+
+button{
+    font-size: .9rem;
+    font-weight: 400;
+    
+    padding: 0 0 0 12px;
+    justify-content: space-between;
+
+    background-color: transparent;
+    cursor: pointer;
+    border:none;
+
+    transition: filter 0.2s;
+    opacity: 0.7;
+
+    align-items: center;
+}
+
+button:hover{
+    opacity: 1;
+}

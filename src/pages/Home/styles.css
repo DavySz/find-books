@@ -1,0 +1,48 @@
+.container{
+    display:flex;
+    flex-direction: column;
+}
+header{
+    width:90%;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    margin-top:20vh;
+
+    align-items: center;
+}
+h1{
+    margin-bottom: 1.2rem;
+}
+p{
+    margin-bottom: 0.5rem;
+}
+.find{
+    display: flex;
+    width:100%;
+}
+input{
+   padding:0.9rem;
+   width: 100%;
+   border-radius: 8px 0 0 8px;  
+   border-width: 1px 0 1px 1px;
+   background-color: #fff;
+}
+
+.button-research{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    border:1px solid;
+    border-width: 1px 1px 1px 0;
+    border-radius: 0 8px 8px 0;
+    padding-right: 8px;
+
+    background-color:#fff;
+}
+
+.cards-container{
+    margin-top: 5.0rem;
+}
