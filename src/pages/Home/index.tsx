@@ -3,6 +3,7 @@ import { useState } from "react";
 import lupaSVG from '../../assets/lupa.svg'
 import bookSVG from '../../assets/book.svg'
 
+import { searchBooks } from "../../functions/searchBooks";
 import { Header } from "../../components/Header";
 import { Card } from "../../components/Card";
 import './styles.css'
@@ -11,12 +12,8 @@ export function Home() {
 
     const [find, setFind] = useState('')
 
-    async function search() {
-        fetch(`https://www.googleapis.com/books/v1/volumes?q=${find}&maxResults=12&key=${process.env.REACT_APP_OPEN_API_KEY}`)
-            .then(response => response.json())
-            .then(result => {
-                console.log(result.items)
-            })
+    function search() {
+        searchBooks(find)
     }
 
     return (
@@ -46,8 +43,7 @@ export function Home() {
                 </div>
             </main>
             <div className='cards-container'>
-                {/* <img src={bookSVG} alt="Imagem de livros" /> */}
-                <Card />
+                <img src={bookSVG} alt="Imagem de livros" />
             </div>
         </div>
     )
