@@ -44,5 +44,9 @@ input{
 }
 
 .cards-container{
-    margin-top: 5.0rem;
+    justify-content:left;
+    align-items: center;
+    margin: 5rem 8rem 5rem 8rem;
+    flex-wrap: wrap;
+    display: flex;
 }

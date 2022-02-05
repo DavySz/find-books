@@ -1,13 +1,23 @@
 import { useState } from "react";
 
-import { Header } from "../../components/Header";
 import lupaSVG from '../../assets/lupa.svg'
 import bookSVG from '../../assets/book.svg'
+
+import { Header } from "../../components/Header";
+import { Card } from "../../components/Card";
 import './styles.css'
 
 export function Home() {
 
     const [find, setFind] = useState('')
+
+    async function search() {
+        fetch(`https://www.googleapis.com/books/v1/volumes?q=${find}&maxResults=12&key=${process.env.REACT_APP_OPEN_API_KEY}`)
+            .then(response => response.json())
+            .then(result => {
+                console.log(result.items)
+            })
+    }
 
     return (
         <div className="container">
@@ -30,14 +40,15 @@ export function Home() {
                         value={find}
                         onChange={(e) => { setFind(e.target.value) }}
                     />
-                    <button className='button-research' title='Pesquisar'>
+                    <button className='button-research' title='Pesquisar' onClick={search}>
                         <img src={lupaSVG} alt="lupa" />
                     </button>
                 </div>
-                <div className='cards-container'>
-                    <img src={bookSVG} alt="Imagem de livros" />
-                </div>
             </main>
+            <div className='cards-container'>
+                {/* <img src={bookSVG} alt="Imagem de livros" /> */}
+                <Card />
+            </div>
         </div>
     )
 }

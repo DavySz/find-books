@@ -1,7 +1,16 @@
+import './styles.css'
+
+type CardProps = {
+    title: string;
+    authors: string;
+    publishedDate: string;
+    publiser: string;
+}
+
 export function Card() {
     return (
-        <div className="container">
-            <div className="content">
+        <div className="card-container">
+            <div className="card-content">
                 <div className="book">
                     <img src="" alt="" />
                 </div>
