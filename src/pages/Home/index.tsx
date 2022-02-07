@@ -11,9 +11,11 @@ import './styles.css'
 export function Home() {
 
     const [find, setFind] = useState('')
+    const [books, setBooks] = useState([])
 
     function search() {
-        searchBooks(find)
+        const results = searchBooks(find)
+        console.log(results)
     }
 
     return (
