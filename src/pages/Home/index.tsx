@@ -5,6 +5,7 @@ import bookSVG from '../../assets/book.svg'
 
 import { searchBooks } from "../../functions/searchBooks";
 import { Header } from "../../components/Header";
+import { bookType } from "../../types/googleBooksType";
 import { Card } from "../../components/Card";
 import './styles.css'
 
@@ -13,10 +14,15 @@ export function Home() {
     const [find, setFind] = useState('')
     const [books, setBooks] = useState([])
 
-    function search() {
-        const results = searchBooks(find)
-        console.log(results)
+    async function search() {
+        await searchBooks(find).then((response) => {
+            console.log(response.items)
+            setBooks(response.items)
+        }).catch((error) => {
+            console.log(error)
+        })
     }
+
 
     return (
         <div className="container">
@@ -45,7 +51,19 @@ export function Home() {
                 </div>
             </main>
             <div className='cards-container'>
-                <img src={bookSVG} alt="Imagem de livros" />
+                {
+                    books.map((book: bookType) => {
+                        return (
+                            <Card
+                                key={book.id}
+                                title={book.volumeInfo.title}
+                                authors={book.volumeInfo.authors}
+                                publishedDate={book.volumeInfo.publishedDate}
+                                imageLinks={book.volumeInfo.imageLinks}
+                            />
+                        )
+                    })
+                }
             </div>
         </div>
     )

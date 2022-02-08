@@ -1,24 +1,31 @@
+import { volumeInfoType } from '../../types/googleBooksType'
+import notFoundPNG from '../../assets/not-found.png'
 import './styles.css'
 
-type CardProps = {
-    title: string;
-    authors: string;
-    publishedDate: string;
-    publiser: string;
-}
-
-export function Card() {
+export function Card({ title, imageLinks, authors, publishedDate }: volumeInfoType) {
     return (
         <div className="card-container">
             <div className="card-content">
                 <div className="book">
-                    <img src="" alt="" />
+                    {
+                        imageLinks ?
+                            <img src={imageLinks.thumbnail} alt={title} className='book-image' /> :
+                            <img src={notFoundPNG} alt={title} className='book-image' />
+                    }
                 </div>
                 <div className="book-informations">
-                    <h5>Sherlock Holmes</h5>
-                    <p>Authors: Sir Arthur Conan Doyer</p>
-                    <p>Data de publicação: 1996</p>
-                    <button>Continuar</button>
+                    <h5>{title}</h5>
+                    <p className="details">
+                        <span>Author: </span>
+                        <span>{authors}</span>
+                    </p>
+                    <p className="details">
+                        <span>Published: </span>
+                        <span>{publishedDate}</span>
+                    </p>
+                    <button className='button-more'>
+                        More &gt;
+                    </button>
                 </div>
             </div>
         </div>

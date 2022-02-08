@@ -44,7 +44,7 @@ input{
 }
 
 .cards-container{
-    justify-content:left;
+    justify-content:center;
     align-items: center;
     margin: 5rem 8rem 5rem 8rem;
     flex-wrap: wrap;
