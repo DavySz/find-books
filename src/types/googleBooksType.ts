@@ -12,6 +12,12 @@ export type volumeInfoType = {
     publisher?: string;
     subtitle?: string;
     title?: string;
+    industryIdentifiers: Array<industryIdentifiersType>
+}
+
+type industryIdentifiersType = {
+    type: string;
+    identifier: string;
 }
 
 export type bookType = {

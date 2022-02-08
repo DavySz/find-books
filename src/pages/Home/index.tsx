@@ -15,12 +15,13 @@ export function Home() {
     const [books, setBooks] = useState([])
 
     async function search() {
-        await searchBooks(find).then((response) => {
-            console.log(response.items)
-            setBooks(response.items)
-        }).catch((error) => {
-            console.log(error)
-        })
+        await searchBooks(find)
+            .then((response) => {
+                console.log(response.items)
+                setBooks(response.items)
+            }).catch((error) => {
+                console.log(error)
+            })
     }
 
 
@@ -52,17 +53,20 @@ export function Home() {
             </main>
             <div className='cards-container'>
                 {
-                    books.map((book: bookType) => {
-                        return (
-                            <Card
-                                key={book.id}
-                                title={book.volumeInfo.title}
-                                authors={book.volumeInfo.authors}
-                                publishedDate={book.volumeInfo.publishedDate}
-                                imageLinks={book.volumeInfo.imageLinks}
-                            />
-                        )
-                    })
+                    books.length > 0 ?
+                        books.map((book: bookType) => {
+                            return (
+                                <Card
+                                    key={book.id}
+                                    title={book.volumeInfo.title}
+                                    authors={book.volumeInfo.authors}
+                                    imageLinks={book.volumeInfo.imageLinks}
+                                    publishedDate={book.volumeInfo.publishedDate}
+                                    industryIdentifiers={book.volumeInfo.industryIdentifiers}
+                                />
+                            )
+                        }) :
+                        <img src={bookSVG} alt='Imagem de livros' />
                 }
             </div>
         </div>

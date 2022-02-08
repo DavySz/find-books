@@ -18,7 +18,7 @@
 .book-image{
    height: 230px;
    width: 160px;
-   border-radius: 8px 8px 8px 8px;
+   border-radius: 8px;
 }
 
 span{
@@ -36,4 +36,9 @@ span{
     border-radius: 8px;
     color:white;
     padding: 5px;
+}
+
+.link-more{
+    text-decoration: none;
+    color:white;
 }

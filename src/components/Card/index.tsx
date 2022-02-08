@@ -1,8 +1,16 @@
 import { volumeInfoType } from '../../types/googleBooksType'
 import notFoundPNG from '../../assets/not-found.png'
+import { Link } from 'react-router-dom'
 import './styles.css'
 
-export function Card({ title, imageLinks, authors, publishedDate }: volumeInfoType) {
+export function Card({
+    industryIdentifiers,
+    publishedDate,
+    imageLinks,
+    authors,
+    title,
+}: volumeInfoType) {
+
     return (
         <div className="card-container">
             <div className="card-content">
@@ -24,7 +32,7 @@ export function Card({ title, imageLinks, authors, publishedDate }: volumeInfoTy
                         <span>{publishedDate}</span>
                     </p>
                     <button className='button-more'>
-                        More &gt;
+                        <Link to={`/book/datails/${industryIdentifiers[1].identifier}`} className="link-more">More &gt;</Link>
                     </button>
                 </div>
             </div>
