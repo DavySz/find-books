@@ -14,7 +14,7 @@ function App() {
           }
         />
         <Route
-          path='/book/datails/:isbn'
+          path='/book/datails/:id'
           element={
             <BookDatails />
           }

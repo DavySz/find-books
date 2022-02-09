@@ -12,7 +12,10 @@ export type volumeInfoType = {
     publisher?: string;
     subtitle?: string;
     title?: string;
-    industryIdentifiers: Array<industryIdentifiersType>
+    industryIdentifiers?: Array<industryIdentifiersType>
+    id: string;
+    canonicalVolumeLink?: string;
+    previewLink?: string;
 }
 
 type industryIdentifiersType = {

@@ -1,11 +1,20 @@
+import { useNavigate } from 'react-router-dom'
 import './styles.css'
 
 export function Header() {
+    const navigate = useNavigate();
+
+    function goToHome() {
+        navigate('/')
+    }
+
     return (
         <div className="container">
             <div className="content">
                 <div className="img">
-                    <h1>fb</h1>
+                    <div onClick={goToHome} className="logo">
+                        <h1>fb</h1>
+                    </div>
                 </div>
                 <div className="options">
                     <button>About</button>

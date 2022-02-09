@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 import './styles.css'
 
 export function Card({
-    industryIdentifiers,
     publishedDate,
     imageLinks,
     authors,
     title,
+    id,
 }: volumeInfoType) {
 
     return (
@@ -32,7 +32,7 @@ export function Card({
                         <span>{publishedDate}</span>
                     </p>
                     <button className='button-more'>
-                        <Link to={`/book/datails/${industryIdentifiers[1].identifier}`} className="link-more">More &gt;</Link>
+                        <Link to={`/book/datails/${id}`} className="link-more">More &gt;</Link>
                     </button>
                 </div>
             </div>

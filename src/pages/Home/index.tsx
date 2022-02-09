@@ -62,7 +62,7 @@ export function Home() {
                                     authors={book.volumeInfo.authors}
                                     imageLinks={book.volumeInfo.imageLinks}
                                     publishedDate={book.volumeInfo.publishedDate}
-                                    industryIdentifiers={book.volumeInfo.industryIdentifiers}
+                                    id={book.id}
                                 />
                             )
                         }) :
