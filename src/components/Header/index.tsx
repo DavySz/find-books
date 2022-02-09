@@ -17,8 +17,12 @@ export function Header() {
                     </div>
                 </div>
                 <div className="options">
-                    <button>About</button>
-                    <button>Contact</button>
+                    <button className='button-header'>
+                        <a href="https://github.com/DavySz/find-books/blob/main/README.md" className="link-about" target="_blank" rel="noopener noreferrer">About</a>
+                    </button>
+                    <button className='button-header'>
+                        <a href="https://ayo.so/davy_sz" className="link-about" target="_blank" rel="noopener noreferrer">Contact</a>
+                    </button>
                 </div>
             </div>
         </div>
