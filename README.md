@@ -6,7 +6,8 @@
 
 ## 📚 Find-books
 
-Find the books you want by searching on Find-books, you don't need to know the name of the book, if you know the author or publisher name, just type, search and find.
+Find the books you want by searching on Find-books, you don't need to know the name of the book, if you know the author or publisher name, just type, search and find. This application uses [Google Books API](https://developers.google.com/books/docs/v1/using)
+
 
 ## 🧪 Technologies
 
