@@ -36,6 +36,11 @@ $ yarn
 $ yarn start
 ```
 
+Create .env.local in your project
+```
+REACT_APP_OPEN_API_KEY=
+```
+
 The app will be available for access on your browser at http://localhost:3000
 
 ---
