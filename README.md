@@ -36,7 +36,7 @@ $ yarn
 $ yarn start
 ```
 
-Create .env.local in your project
+Create and configure environment variables
 ```
 REACT_APP_OPEN_API_KEY=
 ```
